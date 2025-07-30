@@ -15,6 +15,7 @@ const meta = {
     onIconClick: { action: "clicked", description: "아이콘 버튼 클릭 이벤트" },
     errorMessage: { control: "text", description: "텍스트를 확인해주세요." },
     placeholder: { control: "text", description: "텍스트를 입력해주세요." },
+    id: { control: "text", description: "텍스트 필드의 id" },
     onChange: { action: "changed", description: "입력 변경 이벤트" },
     value: { control: "text", description: "" },
     isError: { control: "boolean", description: "에러 상태" },
@@ -34,5 +35,6 @@ export const Default: Story = {
     onChange: () => {},
     value: "",
     isError: false,
+    id: "email",
   },
 };

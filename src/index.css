@@ -5,3 +5,18 @@
 body {
   font-family: "Noto Sans KR";
 }
+
+@layer components {
+  .relative > p {
+    @apply absolute;
+  }
+
+  .navigation-title-wrapper > button {
+    @apply mr-[7px];
+  }
+
+  /* 요렇게도 가능
+  .text-field > p {
+    @apply absolute;
+  } */
+}

@@ -11,6 +11,7 @@ interface IDefaultTextFieldProps {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   value: string;
   isError: boolean;
+  id: string;
 }
 
 export default function DefaultTextField({
@@ -22,9 +23,9 @@ export default function DefaultTextField({
   onChange,
   value,
   isError,
+  id,
 }: IDefaultTextFieldProps) {
   const [isFocused, setIsFocused] = useState(false);
-  // const borderColor = !value ? "border-mono300" : "border-primary";
   const borderColor = isFocused
     ? "border-secondary"
     : !value
@@ -32,13 +33,14 @@ export default function DefaultTextField({
     : "border-primary";
 
   return (
-    <div>
+    <div className="relative">
       <div
         className={`text-primary border-b ${borderColor}`}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       >
         <input
+          id={id}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
