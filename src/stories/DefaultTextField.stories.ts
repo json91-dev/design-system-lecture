@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "@storybook/test";
 
 import DefaultTextField from "../components/DefaultTextField";
 
@@ -20,6 +21,10 @@ const meta = {
     value: { control: "text", description: "" },
     isError: { control: "boolean", description: "에러 상태" },
   },
+  args: {
+    onChange: fn(),
+    onIconClick: fn(),
+  },
 } satisfies Meta<typeof DefaultTextField>;
 
 export default meta;
@@ -30,9 +35,7 @@ export const Default: Story = {
     errorMessage: "에러 메세지",
     iconPath: "/icons/ic-delete-dark.svg",
     iconAlt: "아이콘 버튼",
-    onIconClick: () => {},
     placeholder: "텍스트를 입력해주세요.",
-    onChange: () => {},
     value: "",
     isError: false,
     id: "email",
