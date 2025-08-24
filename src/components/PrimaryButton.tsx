@@ -29,7 +29,7 @@ export default function PrimaryButton({
   return (
     <button
       disabled={disabled}
-      className={`w-full rounded-primary-button h-[59px] ${color[theme]} ${disabledStyle}`}
+      className={`w-full rounded-button-default h-[59px] ${color[theme]} ${disabledStyle}`}
       onClick={onClick}
     >
       {children}
